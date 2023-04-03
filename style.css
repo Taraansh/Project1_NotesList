@@ -49,14 +49,6 @@ body {
   font-family: inherit;
   padding: 1em 0;
   height: 15rem;
-
-  /* 
-  padding-top: 1em
-  margin-top: 2em;
-  word-wrap: break-word;
-  box-sizing: border-box;
-  resize: none;
-  white-space: pre-wrap; */
 }
 
 .card-content {

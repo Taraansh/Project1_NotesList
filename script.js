@@ -9,8 +9,8 @@ function addNewNote(text = "") {
   note.classList.add("note");
   note.innerHTML = `  
    <div class="tools">  
-   <button class="edit">${localStorage.getItem('editButtonState') === 'true' ? 'Save' : 'Edit'}</button>
-   <button class="delete">Delete</button>  
+   <button class="edit">&#128190</button>
+   <button class="delete">&#10006;</button>  
    </div>  
    <p class="main ${text ? "" : "hidden"}"></p>  
    <textarea class="${text ? "hidden" : ""}" rows=8></textarea>  
@@ -28,15 +28,8 @@ function addNewNote(text = "") {
   editBtn.addEventListener("click", () => {
     main.classList.toggle("hidden");
     textArea.classList.toggle("hidden");
-    if (editBtn.innerText === 'Edit') {
-      editBtn.innerText = 'Save';
-      localStorage.setItem('editButtonState', true);
-    } else {
-      editBtn.innerText = 'Edit';
-      localStorage.setItem('editButtonState', false);
-      main.innerHTML = marked(textArea.value);
-      updateLS();
-    }
+    main.innerHTML = marked(textArea.value);
+    updateLS();
   });
   textArea.addEventListener("input", (e) => {
     const { value } = e.target;
